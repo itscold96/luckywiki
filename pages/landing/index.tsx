@@ -41,7 +41,7 @@ export default function Landing() {
           </Fade>
           <div className={styles.background}>
             <Bounce className={styles.introImageWrapper} delay={1900} triggerOnce>
-              <Image src={profileImg} alt={'프로필 소개 이미지'} height={685.67} width={884} />
+              <Image src={profileImg} alt={'프로필 소개 이미지'} height={1421} width={1832} />
             </Bounce>
           </div>
         </section>
