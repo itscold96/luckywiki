@@ -49,8 +49,8 @@
 .LandingContainer {
   background-color: #ecf0fa;
   img {
+    width: auto;
     height: 100%;
-    width: 100%;
   }
 }
 
@@ -66,7 +66,7 @@
   width: 100vw;
   background-image: url('../../public/landing/landing-ellipse.png');
   background-repeat: no-repeat;
-  background-size: 100% 100vw;
+  background-size: 100% 100%;
   background-position: 0 600px;
 }
 
@@ -87,30 +87,30 @@
 
     @include mobile {
       .introLightText {
-        font-size: 35px;
-        line-height: 43px;
+        font-size: 40px;
+        line-height: 48px;
       }
       .introBoldText {
-        font-size: 50px;
-        line-height: 59px;
+        font-size: 55px;
+        line-height: 64px;
       }
     }
   }
 
   .introImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 54px;
-    max-height: 590px;
-    height: 30vw;
-    min-height: 398px;
-    min-width: 336px;
 
     img {
-      height: 100%; /* 이미지 높이를 부모 컨테이너의 100%로 설정 */
-      width: auto; /* 비율 유지 */
-      position: relative;
-      top: 0px;
-      left: 50%;
-      transform: translateX(-50%);
+      @include mobile {
+        aspect-ratio: 498 / 590;
+        hight: auto;
+        width: 100%;
+        max-height: 398px;
+        max-width: 336px;
+      }
     }
   }
 }
@@ -131,6 +131,10 @@
         'wp wp'
         'kb ch';
     }
+
+    @include mobile {
+      gap: 15px;
+    }
   }
 
   .writeParagraph {
@@ -139,9 +143,14 @@
   }
   .keyboard {
     grid-area: kb;
+    aspect-ratio: 364 / 450;
   }
   .chat {
     grid-area: ch;
+    aspect-ratio: 520 / 681;
+    @include tablet {
+      aspect-ratio: 364 / 450;
+    }
   }
 }
 
@@ -152,14 +161,24 @@
   .shareParagraph {
     @include commonParagraph($mainTextColor: $gray500);
     padding-bottom: 120px;
+
+    @include mobile {
+      padding-bottom: 60px;
+    }
   }
 
   .shareImageList {
     display: flex;
     justify-content: center;
     gap: 40px;
-    max-height: 360px;
-    height: 24vw;
+    padding: 0 20px;
+
+    @include mobile {
+      gap: 10px;
+      img {
+        aspect-ratio: 1;
+      }
+    }
   }
 }
 
@@ -170,6 +189,10 @@
   .viewParagraph {
     @include commonParagraph($mainTextColor: $gray500);
     padding-bottom: 120px;
+
+    @include mobile {
+      padding-bottom: 60px;
+    }
   }
 
   .viewGridContainer {
@@ -179,11 +202,16 @@
       'be ch ch';
     gap: 40px;
 
+    @include mobile {
+      gap: 15px;
+    }
+
     .scriptGreen {
       grid-area: sg;
     }
     .bell {
       grid-area: be;
+      aspect-ratio: 1;
     }
     .chatLight {
       grid-area: ch;
@@ -221,6 +249,6 @@
 
   @include mobile {
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 22px;
   }
 }

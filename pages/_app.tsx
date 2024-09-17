@@ -1,4 +1,3 @@
-import Footer from '@/components/@shared/footer/Footer';
 import Header from '@/components/@shared/header/Header';
 import Providers from '@/contexts/Providers';
 import '@/styles/globals.scss';
@@ -15,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Providers>
         <Header />
         <Component {...pageProps} />
-        <Footer />
       </Providers>
     </>
   );
