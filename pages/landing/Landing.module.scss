@@ -43,11 +43,11 @@
 
 .cloverText {
   font-family: YClover-Bold;
-  color: $primary-green200;
+  color: #0adb86;
 }
 
 .LandingContainer {
-  background-color: #ecf0fa;
+  width: 100vw;
   img {
     width: 100%;
     height: 100%;
@@ -67,16 +67,34 @@
   background-image: url('../../public/landing/landing-ellipse.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-position: 0 600px;
+  background-position: 0 300px;
+
+  @include mobile {
+    background-position: 0 200px;
+  }
 }
 
 .introSection {
   padding-top: 120px;
-  padding-bottom: 62px;
   text-align: center;
 
+  @include mobile {
+    padding-top: 70px;
+  }
+
+  .logoImageWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+
   .introParagraph {
-    padding-bottom: 40px;
+    padding: 60px 0;
 
     .introLightText {
       @include fontStyle400($font-family: HakgyoansimDunggeunmisoTTF-R, $font-size: 60px);
@@ -86,6 +104,8 @@
     }
 
     @include mobile {
+      padding: 40px 0;
+
       .introLightText {
         font-size: 40px;
         line-height: 48px;
@@ -102,24 +122,31 @@
     justify-content: center;
     align-items: center;
     padding-top: 54px;
+    position: relative;
+    height: 685.67px;
+
+    @include mobile {
+      height: 275px;
+    }
 
     img {
-      max-height: 590px;
-      max-width: 498px;
+      padding: 0 20px;
+      position: absolute;
+      top: -20px;
+      height: auto;
+      max-width: 685.67px;
+      aspect-ratio: 884 / 685.67;
 
       @include mobile {
-        aspect-ratio: 498 / 590;
-        hight: auto;
-        width: 100%;
-        max-height: 398px;
-        max-width: 336px;
+        max-width: 450px;
+        top: 0;
       }
     }
   }
 }
 
 .writeSection {
-  background-color: $gray500;
+  background-color: #ededed;
   padding: 200px 0 248px;
 
   .writeGridContainer {
@@ -142,7 +169,7 @@
 
   .writeParagraph {
     grid-area: wp;
-    @include commonParagraph($mainTextColor: $gray50);
+    @include commonParagraph($mainTextColor: $gray500);
   }
   .keyboard {
     grid-area: kb;
@@ -153,7 +180,6 @@
 }
 
 .shareSection {
-  background-color: #f0f4fc;
   padding: 200px 0;
 
   .shareParagraph {
@@ -181,6 +207,7 @@
 }
 
 .viewSection {
+  background-color: #ededed;
   padding-top: 200px;
   padding-bottom: 200px;
 

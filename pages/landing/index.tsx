@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './Landing.module.scss';
 import profileImg from '@/public/landing/landing-profile.png';
+import logoImg from '@/public/logo/logo_main.png';
 import keyboardImg from '@/public/landing/landing-keyboard.png';
 import chatDarkImg from '@/public/landing/landing-chat-dark.png';
 import share1Img from '@/public/landing/landing-share1.png';
@@ -19,29 +20,32 @@ export default function Landing() {
   return (
     <>
       <main className={styles.LandingContainer}>
-        <div className={styles.background}>
-          <section className={classNames(styles.introSection, styles.common)}>
-            <div className={styles.introParagraph}>
-              <Fade delay={300} triggerOnce>
-                <p className={styles.introLightText}>친구들이 만드는</p>
-              </Fade>
-              <Fade delay={900} triggerOnce>
-                <p className={styles.introBoldText}>
-                  나만의 <span className={styles.cloverText}>위키</span>
-                </p>
-              </Fade>
-            </div>
-            <Fade delay={1500} triggerOnce>
-              <Link href={'/home'} className={classNames(styles.landingLink, styles.dark)}>
-                위키 만들기
-              </Link>
+        <section className={styles.introSection}>
+          <div className={styles.logoImageWrapper}>
+            <Image src={logoImg} alt={'로고 이미지'} height={353} width={1435} />
+          </div>
+          <div className={styles.introParagraph}>
+            <Fade delay={300} triggerOnce>
+              <p className={styles.introLightText}>친구들이 만드는</p>
             </Fade>
+            <Fade delay={900} triggerOnce>
+              <p className={styles.introBoldText}>
+                나만의 <span className={styles.cloverText}>위키</span>
+              </p>
+            </Fade>
+          </div>
+          <Fade delay={1400} triggerOnce>
+            <Link href={'/home'} className={classNames(styles.landingLink, styles.dark)}>
+              위키 만들기
+            </Link>
+          </Fade>
+          <div className={styles.background}>
             <Bounce className={styles.introImageWrapper} delay={1900} triggerOnce>
-              <Image src={profileImg} alt={'프로필 소개 이미지'} height={590} width={498} />
+              <Image src={profileImg} alt={'프로필 소개 이미지'} height={685.67} width={884} />
             </Bounce>
-          </section>
-        </div>
-        <section className={classNames(styles.writeSection)}>
+          </div>
+        </section>
+        <section className={styles.writeSection}>
           <div className={styles.common}>
             <div className={styles.writeGridContainer}>
               <div className={styles.writeParagraph}>
@@ -85,32 +89,34 @@ export default function Landing() {
             </Flip>
           </div>
         </section>
-        <section className={classNames(styles.viewSection, styles.common)}>
-          <Fade delay={300} triggerOnce>
-            <div className={styles.viewParagraph}>
-              <p className={styles.upperSubText}>View</p>
-              <p className={styles.mainLightText}>친구들이 달아준</p>
-              <p className={styles.mainBoldText}>내용을 확인해봐요</p>
+        <section className={styles.viewSection}>
+          <div className={styles.common}>
+            <Fade delay={300} triggerOnce>
+              <div className={styles.viewParagraph}>
+                <p className={styles.upperSubText}>View</p>
+                <p className={styles.mainLightText}>친구들이 달아준</p>
+                <p className={styles.mainBoldText}>내용을 확인해봐요</p>
+              </div>
+            </Fade>
+            <div className={styles.viewGridContainer}>
+              <Image
+                className={styles.scriptGreen}
+                src={scriptGreenImg}
+                alt={'초록 배경 채팅 이미지'}
+                height={280}
+                width={924}
+              />
+              <AttentionSeeker effect={'swing'} delay={400} triggerOnce>
+                <Image className={styles.bell} src={bellImg} alt={'종 이미지'} height={280} width={280} />
+              </AttentionSeeker>
+              <Image
+                className={styles.chatLight}
+                src={chatLightImg}
+                alt={'밝은 배경 채팅 이미지'}
+                height={280}
+                width={604}
+              />
             </div>
-          </Fade>
-          <div className={styles.viewGridContainer}>
-            <Image
-              className={styles.scriptGreen}
-              src={scriptGreenImg}
-              alt={'초록 배경 채팅 이미지'}
-              height={280}
-              width={924}
-            />
-            <AttentionSeeker effect={'swing'} delay={400} triggerOnce>
-              <Image className={styles.bell} src={bellImg} alt={'종 이미지'} height={280} width={280} />
-            </AttentionSeeker>
-            <Image
-              className={styles.chatLight}
-              src={chatLightImg}
-              alt={'밝은 배경 채팅 이미지'}
-              height={280}
-              width={604}
-            />
           </div>
         </section>
         <section className={styles.startSection}>
@@ -120,7 +126,7 @@ export default function Landing() {
             </p>
           </Fade>
           <AttentionSeeker effect={'bounce'} delay={400} triggerOnce>
-            <Link href={'/home'} className={classNames(styles.landingLink)}>
+            <Link href={'/home'} className={styles.landingLink}>
               지금 시작하기
             </Link>
           </AttentionSeeker>
