@@ -46,7 +46,9 @@ export default function WikiCard({ profileCard }: WikiCardProps) {
       <section className={styles.detail}>
         <h1>{profileCard.name}</h1>
         <p>
-          {profileCard.city}, {profileCard.nationality}
+          {profileCard.city && profileCard.nationality
+            ? `${profileCard.city}, ${profileCard.nationality}`
+            : profileCard.city || profileCard.nationality}
         </p>
         <p>{profileCard.job}</p>
       </section>

@@ -11,7 +11,7 @@
 }
 
 .pcIntroduce {
-  @include fontStyle400;
+  @include fontStyle600($font-size: 18px);
   @include ellipsis;
   text-align: center;
   padding: 20px 20px;
@@ -52,6 +52,12 @@
   p {
     @include fontStyle400($font-size: 14px, $line-height: 24px, $color: $gray400);
   }
+}
+
+.instagram {
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .profileValue {
@@ -120,7 +126,7 @@
 
   .introduce {
     display: block;
-    @include fontStyle400;
+    @include fontStyle600($font-size: 18px);
     @include ellipsis;
     text-align: center;
     padding: 20px 20px 0;

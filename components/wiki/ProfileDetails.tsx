@@ -41,8 +41,13 @@ export default function ProfileDetails({ profile }: ProfileDetailProps) {
             <p>{profile.mbti}</p>
             <p>{profile.job}</p>
             {profile.sns ? (
-              <a href={`${INSTAGRAM_URL}${profile.sns}`} target="_blank" rel="noopener noreferrer">
-                <Image src="/icon/icon-instagram.png" alt="sns 아이콘" width={24} height={24} />
+              <a
+                href={`${INSTAGRAM_URL}${profile.sns}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.instagram}
+              >
+                <Image src="/icon/icon-instagram.png" alt="sns 아이콘" width={18} height={18} />
               </a>
             ) : (
               <p></p>
