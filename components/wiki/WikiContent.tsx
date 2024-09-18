@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import ProfileType from '@/types/types';
 import styles from './WikiContent.module.scss';
 import 'react-quill/dist/quill.snow.css';
+import Spinner from '../wikiList/SPinner';
 
 interface WikiContentProps {
   profile: ProfileType;
@@ -17,7 +18,14 @@ const ReactQuillReadComponent = dynamic(
     const Quill = ({ ...props }) => <QuillComponent {...props} />;
     return Quill;
   },
-  { loading: () => <div>...loading</div>, ssr: false },
+  {
+    loading: () => (
+      <div>
+        <Spinner />
+      </div>
+    ),
+    ssr: false,
+  },
 );
 
 function EmptyContent({ onOpenModalButtonClick }: EmptyContentProps) {

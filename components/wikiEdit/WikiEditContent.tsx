@@ -5,6 +5,7 @@ import { ReactQuillProps } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { uploadImages } from '@/apis/auth/uploadImages';
 import styles from './WikiEditContent.module.scss';
+import Spinner from '../wikiList/SPinner';
 
 interface ForwardedQuillComponent extends ReactQuillProps {
   forwardedRef: React.Ref<ReactQuill>;
@@ -24,7 +25,14 @@ const QuillWrapper = dynamic(
     );
     return Quill;
   },
-  { loading: () => <div>...loading</div>, ssr: false },
+  {
+    loading: () => (
+      <div>
+        <Spinner />
+      </div>
+    ),
+    ssr: false,
+  },
 );
 
 export default function WikiEditContent({ onQuillChange, value }: WikiEditProps) {
