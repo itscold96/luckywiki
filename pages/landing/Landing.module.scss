@@ -47,7 +47,7 @@
 }
 
 .LandingContainer {
-  width: 100vw;
+  width: 100%;
   img {
     width: 100%;
     height: 100%;
@@ -85,16 +85,19 @@
   .logoImageWrapper {
     display: flex;
     justify-content: center;
-    padding: 0 20px;
 
     img {
-      width: auto;
+      max-width: 280px;
       height: auto;
+
+      @include mobile {
+        max-width: 180px;
+      }
     }
   }
 
   .introParagraph {
-    padding: 60px 0;
+    padding: 40px 0 60px;
 
     .introLightText {
       @include fontStyle400($font-family: HakgyoansimDunggeunmisoTTF-R, $font-size: 60px);
@@ -104,7 +107,7 @@
     }
 
     @include mobile {
-      padding: 40px 0;
+      padding: 20px 0;
 
       .introLightText {
         font-size: 40px;
@@ -121,19 +124,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 54px;
     position: relative;
     height: 1000px;
+
+    pointer-events: none;
 
     @include mobile {
       height: 275px;
     }
 
     img {
-      padding: 0 20px;
       position: absolute;
       top: -60px;
       height: auto;
+      width: 90%;
       max-width: 1000px;
       aspect-ratio: 1832 / 1421;
 

@@ -10,13 +10,19 @@ interface ProfileCardProps {
   index: number;
 }
 
-export default function ProfileCard({ profile }: ProfileCardProps) {
-  const { code, updatedAt, image, family, ...profileTextValues } = profile;
-  const date = new Date(updatedAt);
+const formattingDate = (stringDate: Date) => {
+  const date = new Date(stringDate);
   const year = date.getFullYear();
   const month = ('0' + (date.getMonth() + 1)).slice(-2);
   const day = ('0' + date.getDate()).slice(-2);
   const updatedDate = `${year}.${month}.${day}`;
+
+  return updatedDate;
+};
+
+export default function ProfileCard({ profile }: ProfileCardProps) {
+  const { code, updatedAt, image, family, ...profileTextValues } = profile;
+  const updatedDate = formattingDate(updatedAt);
 
   const profileImageSrc = image || noProfileImage;
 

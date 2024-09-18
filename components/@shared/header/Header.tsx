@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href={'/home'}>
-        <Image src={logo} alt={'메인 로고 이미지'} height={30} width={135} priority />
+        <Image src={logo} alt={'메인 로고 이미지'} height={30} width={142} priority />
       </Link>
       <UserMenu />
       <MobileUserMenu />

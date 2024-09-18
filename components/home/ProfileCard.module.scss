@@ -18,6 +18,8 @@ $HakgyoFont: HakgyoansimDunggeunmisoTTF-R;
 
 .imageCard,
 .textCard {
+  cursor: pointer;
+  border-radius: 20px;
   max-width: 350px;
   width: 100%;
   aspect-ratio: 3.5 / 4.5;
@@ -42,20 +44,16 @@ $HakgyoFont: HakgyoansimDunggeunmisoTTF-R;
 }
 
 .imageCard {
-  cursor: pointer;
-  border-radius: 20px;
-
   img {
     border-radius: 20px;
     height: 100%;
-    width: 100%;
   }
 }
 
 .textCard {
   background-color: $gray50;
   padding: 25px;
-  border-radius: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
