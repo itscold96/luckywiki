@@ -5,6 +5,10 @@ import 'react-quill/dist/quill.snow.css';
 
 interface WikiContentProps {
   profile: ProfileType;
+  onOpenModalButtonClick: () => void;
+}
+interface EmptyContentProps {
+  onOpenModalButtonClick: () => void;
 }
 
 const ReactQuillReadComponent = dynamic(
@@ -16,7 +20,7 @@ const ReactQuillReadComponent = dynamic(
   { loading: () => <div>...loading</div>, ssr: false },
 );
 
-function EmptyContent() {
+function EmptyContent({ onOpenModalButtonClick }: EmptyContentProps) {
   return (
     <div className={styles.emptyContent}>
       <p>
@@ -24,14 +28,14 @@ function EmptyContent() {
         <br />
         위키에 참여해 보세요!
       </p>
-      <button>시작하기</button>
+      <button onClick={onOpenModalButtonClick}>시작하기</button>
     </div>
   );
 }
 
-export default function WikiContent({ profile }: WikiContentProps) {
+export default function WikiContent({ profile, onOpenModalButtonClick }: WikiContentProps) {
   if (!profile.content) {
-    return <EmptyContent />;
+    return <EmptyContent onOpenModalButtonClick={onOpenModalButtonClick} />;
   }
   return (
     <>

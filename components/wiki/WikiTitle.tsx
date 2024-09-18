@@ -39,13 +39,14 @@ export default function WikiTitle({ profile, isEditing, sameId, onOpenModalButto
       <div className={styles.wikiTitle}>
         <header>
           <h1>{profile.name}</h1>
-          {sameId ? (
-            <button onClick={onOpenModalButtonClick}>이어서 편집</button>
-          ) : (
-            <button disabled={isEditing} onClick={onOpenModalButtonClick}>
-              {isEditing ? '편집 중' : '위키 참여하기'}
-            </button>
-          )}
+          {profile.content &&
+            (sameId ? (
+              <button onClick={onOpenModalButtonClick}>이어서 편집</button>
+            ) : (
+              <button disabled={isEditing} onClick={onOpenModalButtonClick}>
+                {isEditing ? '편집 중' : '위키 참여하기'}
+              </button>
+            ))}
         </header>
         {contextHolder}
         <Button
