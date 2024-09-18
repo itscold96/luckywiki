@@ -27,7 +27,7 @@ const QuillWrapper = dynamic(
   },
   {
     loading: () => (
-      <div>
+      <div style={{ marginTop: '150px' }}>
         <Spinner />
       </div>
     ),

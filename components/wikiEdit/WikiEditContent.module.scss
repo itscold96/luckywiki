@@ -1,11 +1,9 @@
 @import '../../styles/mixins';
 
 .contentContainer {
-  position: relative;
   flex: 1 0;
   max-width: 1120px;
   margin-left: 200px;
-  z-index: 5;
 }
 
 @include tablet {
