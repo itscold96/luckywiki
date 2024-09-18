@@ -1,7 +1,7 @@
 import WikiCard from '@/components/wikiList/WikiCard';
 import styles from './WikiList.module.scss';
 import Image from 'next/image';
-import Spinner from '@/components/wikiList/SPinner';
+import Spinner from '@/components/wikiList/Spinner';
 import RecentSearch from '@/components/wikiList/RecentSearch';
 import { useSearch } from '@/contexts/SearchProvider';
 import { useWikiInfiniteScroll } from '@/hooks/wikiList/useWikiInfiniteScroll';

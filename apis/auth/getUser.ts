@@ -1,4 +1,4 @@
-import { getProfile } from './getProfile';
+import { getProfile } from '../getProfile';
 import { fetchWithTokenRefresh } from './fetchWithTokenRefresh';
 import { UserProfile } from '@/types/types';
 

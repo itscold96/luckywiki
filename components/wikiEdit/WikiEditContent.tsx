@@ -5,7 +5,7 @@ import { ReactQuillProps } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { uploadImages } from '@/apis/auth/uploadImages';
 import styles from './WikiEditContent.module.scss';
-import Spinner from '../wikiList/SPinner';
+import Spinner from '../wikiList/Spinner';
 
 interface ForwardedQuillComponent extends ReactQuillProps {
   forwardedRef: React.Ref<ReactQuill>;

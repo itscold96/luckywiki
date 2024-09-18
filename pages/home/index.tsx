@@ -4,7 +4,7 @@ import styles from './Home.module.scss';
 import classNames from 'classnames';
 import { GetServerSideProps } from 'next';
 import { Bounce, Fade, JackInTheBox } from 'react-awesome-reveal';
-import { getProfile } from '@/apis/auth/getProfile';
+import { getProfile } from '@/apis/getProfile';
 import Footer from '@/components/@shared/footer/Footer';
 
 interface HomeProps {

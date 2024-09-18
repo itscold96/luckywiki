@@ -6,7 +6,7 @@ import WikiContent from '@/components/wiki/WikiContent';
 import ProfileDetails from '@/components/wiki/ProfileDetails';
 import styles from './[code].module.scss';
 import { useState, useEffect } from 'react';
-import { getProfile } from '@/apis/auth/getProfile';
+import { getProfile } from '@/apis/getProfile';
 import { getPing } from '@/apis/auth/updatePing';
 import { useAuth } from '@/contexts/AuthProvider';
 import { useSnackBar } from '@/contexts/SnackbarProvider';

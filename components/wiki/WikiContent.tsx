@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import ProfileType from '@/types/types';
 import styles from './WikiContent.module.scss';
 import 'react-quill/dist/quill.snow.css';
-import Spinner from '../wikiList/SPinner';
+import Spinner from '../wikiList/Spinner';
 
 interface WikiContentProps {
   profile: ProfileType;
