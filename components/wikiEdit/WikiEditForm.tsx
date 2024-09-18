@@ -114,7 +114,7 @@ export default function WikiEditForm() {
       </ModalComponent>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
         <div className={styles.userActionContainer}>
-          <span className={styles.userName}>{user?.name}님의 위키</span>
+          <span className={styles.userName}>{wikiUserName}님의 위키</span>
           <div className={styles.buttonContainer}>
             <Link href={`/wiki/${code}`} className={`${styles.secondaryButton} button`}>
               취소
