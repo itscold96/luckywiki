@@ -12,7 +12,9 @@ export default function ModalComponent({
   subMessage = '',
   children,
   isOpen = false,
+  isRoute = false,
   onClose,
+  onCancle,
   isEdit = false,
   userCode,
   isAnswer = false,
@@ -23,7 +25,9 @@ export default function ModalComponent({
   subMessage?: string;
   children?: ReactNode;
   isOpen?: boolean;
+  isRoute?: boolean;
   onClose?: () => void;
+  onCancle?: () => void;
   isEdit?: boolean;
   userCode?: string;
   isAnswer?: boolean;
@@ -36,10 +40,10 @@ export default function ModalComponent({
   const router = useRouter();
 
   const fetchPostPing = async () => {
-    const res = await postPing(userCode as string, answer);
-    if (res) {
+    const response = await postPing(userCode as string, answer);
+    if (response) {
       router.push(`/wiki/${userCode}/edit`);
-    } else if (res === undefined) {
+    } else if (response === undefined) {
       setIsError(true);
       setErrorMessage('정답이 아닙니다. 다시 시도해 주세요.');
     }
@@ -64,15 +68,16 @@ export default function ModalComponent({
     router.push(`/wiki/${userCode}`);
   };
 
+  const modalStyle = { maxWidth: '395px', minWidth: '335px', width: '335px', fontFamily: 'Pretendard Variable' };
+  const modalConfig = { width: 'calc(100% - 100px)', destroyOnClose: true, centered: true };
+
   if (isAnswer) {
     return (
       <Modal
-        centered={true}
+        style={modalStyle}
+        {...modalConfig}
         open={isOpen}
         onCancel={onClose}
-        destroyOnClose={true}
-        width={395}
-        mask={true}
         footer={[
           <div key="footer-container" style={{ textAlign: 'center' }}>
             <Button
@@ -127,20 +132,18 @@ export default function ModalComponent({
   if (timelimit) {
     return (
       <Modal
+        style={modalStyle}
+        {...modalConfig}
         title={title}
-        centered
         open={isModalOpen}
         onCancel={handleOverTimeLimit}
-        destroyOnClose={true}
-        getContainer={false}
-        width={350}
         footer={[
           <Button className={styles.buttonColor} key="ok" type="primary" onClick={handleOverTimeLimit}>
             확인
           </Button>,
         ]}
       >
-        <div>
+        <div className={styles.messageContainer}>
           <p className={styles.message}>{message}</p>
           <p className={styles.subMessage}>{subMessage}</p>
         </div>
@@ -151,13 +154,11 @@ export default function ModalComponent({
   if (isEdit) {
     return (
       <Modal
+        style={modalStyle}
+        {...modalConfig}
         title={title}
-        centered
         open={isOpen}
         onCancel={onClose}
-        destroyOnClose={true}
-        getContainer={false}
-        width={350}
         transitionName=""
         footer={[
           <Button className={styles.buttonColor} key="ok" type="primary" onClick={handleFinishEdit}>
@@ -165,30 +166,51 @@ export default function ModalComponent({
           </Button>,
         ]}
       >
-        <p>{children}</p>
+        <p className={styles.message}>{children}</p>
+      </Modal>
+    );
+  }
+
+  if (isRoute) {
+    return (
+      <Modal
+        style={modalStyle}
+        {...modalConfig}
+        title={title}
+        open={isOpen}
+        onCancel={onCancle}
+        transitionName=""
+        footer={[
+          <div className={styles.buttonContainer} key="footer-container">
+            <Button className={styles.warning} key="ok" type="primary" onClick={onClose}>
+              페이지 나가기
+            </Button>
+          </div>,
+        ]}
+      >
+        <div>
+          <p className={styles.message}>저장하지 않고 나가시겠어요?</p>
+          <p className={styles.subMessage}>작성하신 모든 내용이 사라집니다.</p>
+        </div>
       </Modal>
     );
   }
 
   return (
-    <>
-      <Modal
-        title={title}
-        centered
-        open={isOpen}
-        onCancel={onClose}
-        destroyOnClose={true}
-        getContainer={false}
-        width={350}
-        transitionName=""
-        footer={[
-          <Button className={styles.buttonColor} key="ok" type="primary" onClick={onClose}>
-            확인
-          </Button>,
-        ]}
-      >
-        <p>{children}</p>
-      </Modal>
-    </>
+    <Modal
+      style={modalStyle}
+      {...modalConfig}
+      title={title}
+      open={isOpen}
+      onCancel={onClose}
+      transitionName=""
+      footer={[
+        <Button className={styles.buttonColor} key="ok" type="primary" onClick={onClose}>
+          확인
+        </Button>,
+      ]}
+    >
+      <p>{children}</p>
+    </Modal>
   );
 }

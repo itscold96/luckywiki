@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getPing } from '@/apis/auth/updatePing';
 import { useRouter } from 'next/router';
 import ModalComponent from '@/components/@shared/modal/Modal';
-// import { useWarnPageUnLoad } from '@/hooks/useWarnPageUnLoad';
+import { useWarnPageUnLoad } from '@/hooks/useWarnPageUnLoad';
 import { usePingTimer } from '@/hooks/usePingTimer';
 
 export default function WikiEdit() {
@@ -16,7 +16,7 @@ export default function WikiEdit() {
     subMessage: '',
   });
 
-  // useWarnPageUnLoad();
+  const { isBlocking, handlePageChange, handlePageChangeCancle } = useWarnPageUnLoad(`/wiki/${code}/edit`);
 
   const savePing = async () => {
     try {
@@ -42,6 +42,7 @@ export default function WikiEdit() {
 
   return (
     <>
+      <ModalComponent isRoute={true} isOpen={isBlocking} onClose={handlePageChange} onCancle={handlePageChangeCancle} />
       {isModalOpen && (
         <ModalComponent
           timelimit={true}

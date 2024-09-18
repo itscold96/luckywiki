@@ -59,7 +59,20 @@
     background: $primary-green400 !important;
   }
   span {
-    font-family: Pretendard !important;
+    font-family: 'Pretendard Variable' !important;
+  }
+}
+
+.warning {
+  background: $secondary-red200;
+  &:hover {
+    background: #b63232 !important;
+  }
+  &:active {
+    background: #ac2929 !important;
+  }
+  span {
+    font-family: 'Pretendard Variable' !important;
   }
 }
 
@@ -69,22 +82,22 @@
 }
 
 .errorMessage {
-  font-family: 'Pretendard Variable' !important;
   color: $secondary-red200;
 }
 
 .footerMessage {
-  font-family: 'Pretendard Variable' !important;
   line-height: 14.32px;
   font-weight: 400;
   font-size: 12px;
   color: $gray400;
 }
 
-.message {
+.messageContainer {
   padding-top: 30px;
+}
+
+.message {
   margin-bottom: 5px;
-  font-family: 'Pretendard Variable' !important;
   font-size: 16px;
   font-weight: 600;
   line-height: 26px;
@@ -93,7 +106,6 @@
 
 .subMessage {
   padding-bottom: 10px;
-  font-family: 'Pretendard Variable' !important;
   font-size: 14px;
   font-weight: 400;
   line-height: 26px;
