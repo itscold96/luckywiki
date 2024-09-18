@@ -106,7 +106,7 @@ export default function WikiProfile({ profile }: WikiProfileProps) {
           onOpenModalButtonClick={handleOpenModalButtonClick}
         />
         <ProfileDetails profile={profile} />
-        <WikiContent profile={profile} />
+        <WikiContent profile={profile} onOpenModalButtonClick={handleOpenModalButtonClick} />
       </div>
       <div className={styles.pcProfile}>
         <section>
@@ -116,7 +116,7 @@ export default function WikiProfile({ profile }: WikiProfileProps) {
             profile={profile}
             onOpenModalButtonClick={handleOpenModalButtonClick}
           />
-          <WikiContent profile={profile} />
+          <WikiContent profile={profile} onOpenModalButtonClick={handleOpenModalButtonClick} />
         </section>
         <section className={styles.profileDetails}>
           <ProfileDetails profile={profile} />
