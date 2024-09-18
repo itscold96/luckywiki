@@ -6,8 +6,10 @@
 }
 
 .formContainer {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   padding-top: 40px;
   padding-bottom: 130px;
   gap: 40px;
@@ -15,15 +17,51 @@
 
 .profileContainer {
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
+  margin-top: 100px;
   margin-right: 80px;
 }
-
+.userName {
+  position: absolute;
+  right: 340px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.userActionContainer {
+  position: fixed;
+  width: 100%;
+  top: 100px;
+  background: #fff;
+  z-index: 2;
+  &::before {
+    position: absolute;
+    content: '';
+    top: -40px;
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #ededed;
+    background: #fff;
+    box-shadow: inset 0px 20px 20px -20px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    z-index: -1;
+  }
+}
 .buttonContainer {
+  position: absolute;
+  right: 80px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 20px;
+  z-index: 2;
   button {
     width: 65px;
   }
@@ -43,30 +81,63 @@
 
 @include tablet {
   .editContiner {
-    padding: 0 50px;
+    position: relative;
   }
   .formContainer {
-    flex-direction: column-reverse;
-    gap: 10px;
+    padding-top: 55px;
+    flex-direction: column;
+    gap: 40px;
   }
   .profileContainer {
+    margin-top: 30px;
     margin-right: 0px;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
+
+  .userName {
+    position: static;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .userActionContainer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    width: 100%;
+    top: 60px;
+    background: #fff;
+    box-shadow: inset 0px 20px 20px -20px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid #ededed;
+    z-index: 2;
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: none;
+    }
+  }
+
   .buttonContainer {
+    position: static;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 }
 
 @include mobile {
   .editContiner {
-    padding: 0 20px;
+    padding: 0;
   }
   .formContainer {
-    padding-top: 15px;
+    padding-top: 50px;
   }
   .buttonContainer {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+  }
+  .userActionContainer {
+    padding: 10px 20px;
   }
 }

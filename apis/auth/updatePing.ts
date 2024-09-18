@@ -1,6 +1,8 @@
 import { fetchWithTokenRefresh } from './fetchWithTokenRefresh';
+import { getServerTime } from '../getServerTime';
 
 export const postPing = async (code: string, answer: string) => {
+  const serverTime = await getServerTime();
   const response = await fetchWithTokenRefresh(`${process.env.NEXT_PUBLIC_BASE_URL}/profiles/${code}/ping`, {
     method: 'POST',
     headers: {
@@ -27,6 +29,7 @@ export const getPing = async (code: string) => {
     };
   }
 
+  const serverTime = await getServerTime();
   const data = await response.json();
   return data;
 };

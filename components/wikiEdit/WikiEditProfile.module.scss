@@ -4,7 +4,6 @@
 .profileDetail {
   @include flexCenter;
   flex-direction: column;
-  position: sticky;
   max-width: 480px;
   height: 787px;
   padding: 20px 40px 36px 40px;
@@ -62,9 +61,8 @@
 
 @include tablet {
   .profileDetail {
-    position: static;
     max-width: 100%;
-    margin: 0;
+    margin: 0 50px;
     height: 423px;
     display: flex;
     justify-content: flex-start;
@@ -105,6 +103,7 @@
 
 @include mobile {
   .profileDetail {
+    margin: 0 20px;
     height: 570px;
     padding: 24px 16px 20px 16px;
   }

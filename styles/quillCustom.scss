@@ -45,7 +45,8 @@
 }
 
 .quill.custom .ql-editor {
-  padding: 56px 0 0 0;
+  min-height: 100vh;
+  padding: 100px 0 0 0;
   font-size: 16px;
 }
 
@@ -55,11 +56,34 @@
 }
 
 .quill.custom .ql-toolbar.ql-snow {
+  position: fixed;
   display: flex;
   justify-content: center;
-  width: 100%;
-  background: $gray100;
+  width: calc(100% - 735px);
+  background: #fff;
   border: none;
+  z-index: 2;
+  &::before {
+    position: absolute;
+    content: '';
+    top: -40px;
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #ededed;
+    background: #fff;
+    box-shadow: inset 0px 20px 20px -20px rgba(0, 0, 0, 0.06);
+    z-index: -1;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    background: $gray100;
+    border-radius: 12px;
+    z-index: -1;
+  }
 }
 
 .quill.custom .ql-snow .ql-editor h1 {
@@ -184,15 +208,29 @@
 }
 
 @include tablet {
+  .quill.custom .ql-container.ql-snow {
+    padding: 0 50px;
+  }
   .quill.custom .ql-toolbar.ql-snow {
-    display: inline-block;
+    position: sticky;
+    width: 100%;
+    top: 121px;
+    flex-wrap: wrap;
+    gap: 15px 0;
     text-align: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-      display: none;
+    white-space: wrap;
+    background: $gray100;
+    &::before {
+      content: none;
     }
+    &::after {
+      content: none;
+    }
+  }
+}
+
+@include mobile {
+  .quill.custom .ql-container.ql-snow {
+    padding: 0 20px;
   }
 }

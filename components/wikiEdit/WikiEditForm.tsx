@@ -113,13 +113,8 @@ export default function WikiEditForm() {
         수정이 완료 되었습니다.
       </ModalComponent>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
-        <QuillEditor
-          userName={wikiUserName}
-          onQuillChange={(content: string) => handleChange('content', content)}
-          value={formValue.content ?? ''}
-        />
-        <div className={styles.profileContainer}>
-          <WikiEditProfile value={formValue} onWikiValueChange={(name, value) => handleChange(name, value)} />
+        <div className={styles.userActionContainer}>
+          <span className={styles.userName}>{user?.name}님의 위키</span>
           <div className={styles.buttonContainer}>
             <Link href={`/wiki/${code}`} className={`${styles.secondaryButton} button`}>
               취소
@@ -127,6 +122,14 @@ export default function WikiEditForm() {
             <button className={`button`}>수정</button>
           </div>
         </div>
+        <div className={styles.profileContainer}>
+          <WikiEditProfile value={formValue} onWikiValueChange={(name, value) => handleChange(name, value)} />
+        </div>
+        <QuillEditor
+          userName={wikiUserName}
+          onQuillChange={(content: string) => handleChange('content', content)}
+          value={formValue.content ?? ''}
+        />
       </form>
     </section>
   );

@@ -8,6 +8,7 @@
 
 @include tablet {
   .contentContainer {
+    position: relative;
     max-width: 100%;
     margin-left: 0;
   }
