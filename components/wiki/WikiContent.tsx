@@ -40,7 +40,7 @@ export default function WikiContent({ profile, onOpenModalButtonClick }: WikiCon
   return (
     <>
       <ReactQuillReadComponent
-        className="custom"
+        className="custom view"
         readOnly={true}
         theme="snow"
         value={profile.content}

@@ -99,6 +99,7 @@
 .quill.custom .ql-snow .ql-editor h2 {
   font-size: 20px;
   color: $gray500;
+  margin-bottom: 10px;
 }
 
 .quill.custom .ql-snow .ql-editor h1:first-child {
@@ -208,6 +209,9 @@
 }
 
 @include tablet {
+  .quill.custom.view .ql-container.ql-snow {
+    padding: 0;
+  }
   .quill.custom .ql-container.ql-snow {
     padding: 0 50px;
   }
@@ -230,6 +234,9 @@
 }
 
 @include mobile {
+  .quill.custom.view .ql-container.ql-snow {
+    padding: 0;
+  }
   .quill.custom .ql-container.ql-snow {
     padding: 0 20px;
   }
