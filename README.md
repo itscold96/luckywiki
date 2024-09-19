@@ -21,7 +21,7 @@
 <br/>
 
 ## 팀원 소개
-| <img src="https://github.com/user-attachments/assets/1128a1e0-fa06-4fc3-a0e5-065c935cc0cc" width="150" height="150"/> | <img src="https://github.com/user-attachments/assets/7014b793-007f-445b-9607-b433102f5f2b" width="150" height="150"/> | <img src="https://github.com/user-attachments/assets/06b45b05-bc73-4b64-b553-4c2ddaf0b14c" width="150" height="150"/> |
+| <img src="https://github.com/user-attachments/assets/1128a1e0-fa06-4fc3-a0e5-065c935cc0cc" width="150" height="150"/> | <img src="https://media.discordapp.net/attachments/1248485270622572595/1265277983535529984/image0.jpg?ex=66ecbbb3&is=66eb6a33&hm=a021c1fde040626b4fe62ee3aeb5d2463547ab723b1e3a83af18cb45a9600985&=&format=webp" width="150" height="150"/> | <img src="https://github.com/user-attachments/assets/06b45b05-bc73-4b64-b553-4c2ddaf0b14c" width="150" height="150"/> |
 |:-:|:-:|:-:|
 |김민찬<br/>[@itscold96](https://github.com/itscold96)|김주은<br/>[@marie1016](https://github.com/marie1016)|김정현<br/>[@kjh9852](https://github.com/kjh9852)|
 
