@@ -10,7 +10,7 @@
 
 # <p align='center'>🍀LuckyWiki</p>
 
-## 서비스 배포 링크 및 팀 노션 링크
+## 서비스 배포 및 팀 노션 링크
 
 <p align='center'><a href="https://luckywiki.vercel.app/">럭키위키 서비스</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://zealous-drop-37e.notion.site/Wikid-7ff6ea28fc13415799239b6c0daf148c?pvs=4">팀 노션</a></p>
 
