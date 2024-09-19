@@ -9,9 +9,14 @@
 </p>
 
 # <p align='center'>🍀LuckyWiki</p>
-<p align='center'><a href="https://luckywiki.vercel.app/">럭키위키 서비스 바로가기</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://zealous-drop-37e.notion.site/Wikid-7ff6ea28fc13415799239b6c0daf148c?pvs=4">팀 노션</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://vimeo.com/1010756166?activityReferer=1">시연 영상</a></p>
+
+## 서비스 배포 링크 및 팀 노션 링크
+
+<p align='center'><a href="https://luckywiki.vercel.app/">럭키위키 서비스</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://zealous-drop-37e.notion.site/Wikid-7ff6ea28fc13415799239b6c0daf148c?pvs=4">팀 노션</a></p>
 
 ## 시연 영상
+
+[![시연 영상](https://github.com/user-attachments/assets/e6dc30c6-c338-4129-9496-a75f4025db6a)](https://vimeo.com/1010756166?activityReferer=1)
 
 <br/>
 
